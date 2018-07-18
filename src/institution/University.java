@@ -2,16 +2,30 @@ package institution;
 
 import person.Student;
 
-public class University {
-    public University(String name) {
-        //TODO: Implementation is needed
-    }
+import java.util.LinkedList;
+import java.util.List;
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
+public class University {
+    private String name;
+    private List<Student> studentList = new LinkedList<>();
+
+    public University(String name) {
+        this.name = name;
     }
 
     public void addStudent(Student student) {
-        //TODO: Implementation is needed
+        studentList.add(student);
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    @Override
+    public String toString() {
+        return "University{" +
+                "name='" + name + '\'' +
+                ", studentList=" + studentList +
+                '}';
     }
 }

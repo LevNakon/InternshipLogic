@@ -1,18 +1,38 @@
 package institution.interlink;
 
+import institution.University;
 import person.Student;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 public class Internship {
+    private String name;
+    private University university;
+    private Set<Student> list_of_students = new HashSet<>();
+
     public Internship(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
+    public void setStudent(University university) {
+        List<Student> studentList = university.getStudentList();
+        double sum = 0;
+        double iter = 0;
+        for (Student student : studentList) {
+            sum += student.getKnowledge();
+            iter += 1;
+        }
+        for (Student student : studentList) {
+            if(student.getKnowledge() >= sum/iter){
+                list_of_students.add(student);
+            }
+        }
     }
 
     public String getStudents() {
-        //TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n";
+        return list_of_students.toString();
     }
 }
