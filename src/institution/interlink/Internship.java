@@ -11,7 +11,7 @@ import java.util.Set;
 public class Internship {
     private String name;
     private University university;
-    private Set<Student> list_of_students = new HashSet<>();
+    private List<Student> list_of_students = new LinkedList<>();
 
     public Internship(String name) {
         this.name = name;
